@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAH Developers | We Build While You Sleep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text .tagline {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .calculator h3 {
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #d0d0d0;
+            font-weight: 500;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .results {
+            background: linear-gradient(135deg, #00d4ff20, #ff6b6b20);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        .results .big-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00d4ff;
+            display: block;
+        }
+        
+        .results .subtitle {
+            color: #d0d0d0;
+            margin-top: 0.5rem;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .live-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: space-between;
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00d4ff;
+            display: block;
+        }
+        
+        .stat .label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .personality-badge {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid #ff6b6b;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .live-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="personality-badge">🤖 Currently coding at 2:47 AM</div>
+                    <h1>We Build While You Sleep</h1>
+                    <p class="tagline">The automation nerds who actually write code instead of selling dreams</p>
+                    <p>Your competition is still manually following up with leads. We build AI agents that work 24/7 so you can focus on what actually makes money.</p>
+                    
+                    <div class="live-stats">
+                        <div class="stat">
+                            <span class="number" id="automations-built">127</span>
+                            <div class="label">Automations Built This Quarter</div>
+                        </div>
+                        <div class="stat">
+                            <span class="number" id="hours-saved">2,847</span>
+                            <div class="label">Hours Saved This Month</div>
+                        </div>
+                        <div class="stat">
+                            <span class="number">3.2M</span>
+                            <div class="label">Messages Processed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator">
+                    <h3>⚡ Calculate Your Time Savings</h3>
+                    
+                    <div class="input-group">
+                        <label for="leads">Monthly Leads</label>
+                        <input type="number" id="leads" placeholder="e.g., 150" value="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="follow-ups">Follow-ups per Lead</label>
+                        <select id="follow-ups">
+                            <option value="3">3 touchpoints</option>
+                            <option value="5" selected>5 touchpoints</option>
+                            <option value="8">8 touchpoints</option>
+                            <option value="12">12+ touchpoints</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="time-per">Minutes per Follow-up</label>
+                        <select id="time-per">
+                            <option value="2">2 minutes</option>
+                            <option value="5" selected>5 minutes</option>
+                            <option value="10">10 minutes</option>
+                            <option value="15">15+ minutes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="results">
+                        <span class="big-number" id="hours-result">42</span>
+                        <div class="subtitle">Hours saved per month</div>
+                        <div style="margin-top: 1rem; color: #00d4ff;">
+                            That's <span id="money-saved">$2,100</span> in your time back
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button" onclick="window.location.href='#contact'">
+                        Build My Automation (Free Strategy Call)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateSavings() {
+            const leads = parseInt(document.getElementById('leads').value) || 0;
+            const followUps = parseInt(document.getElementById('follow-ups').value) || 0;
+            const timePerFollowUp = parseInt(document.getElementById('time-per').value) || 0;
+            
+            const totalMinutes = leads * followUps * timePerFollowUp;
+            const hours = Math.round(totalMinutes / 60);
+            const moneySaved = hours * 50; // $50/hour assumption
+            
+            document.getElementById('hours-result').textContent = hours;
+            document.getElementById('money-saved').textContent = `$${moneySaved.toLocaleString()}`;
+        }
+        
+        // Live counter animation
+        function animateCounter(elementId, start, end, duration) {
+            const element = document.getElementById(elementId);
+            const increment = (end - start) / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateSavings();
+            
+            // Add event listeners for real-time calculation
+            ['leads', 'follow-ups', 'time-per'].forEach(id => {
+                document.getElementById(id).addEventListener('input', calculateSavings);
+                document.getElementById(id).addEventListener('change', calculateSavings);
+            });
+            
+            // Animate counters on load
+            setTimeout(() => {
+                animateCounter('automations-built', 100, 127, 2000);
+                animateCounter('hours-saved', 2500, 2847, 2000);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
